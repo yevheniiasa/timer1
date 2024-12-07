@@ -1,0 +1,29 @@
+.alert {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #007bff;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: slide-up 0.5s ease-out;
+  z-index: 1000;
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Анімація для зникання */
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.alert.fade-out {
+  opacity: 0;
+  transform: translateX(-50%) translateY(20px); /* Зміщення вниз при зниканні */
+}
